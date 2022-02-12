@@ -3,36 +3,38 @@ import array, time
 import ws2812_pio_driver
 from NeoPixel import NeoPixel       
 
+LED_ROW_COUNT = 16
+LED_COL_COUNT = 10
+TOTAL_LED_COUNT = LED_ROW_COUNT * LED_ROW_COUNT
+
 def turn_off_all_leds():
     strip.pixels_fill(strip.BLACK)
     strip.pixels_show()
     time.sleep(0.05)
     
+def show_led_line_by_line(pixel_position):
+    pixel_position_at_end_of_row = (pixel_position+1)%LED_ROW_COUNT == 0
+    if pixel_position_at_end_of_row:
+            strip.pixels_show()
+            time.sleep(0.05)
+       
 def pattern1():
     print("chases")
 
     for color in range(0,160): #从下往上显示            
         strip.color_chase(strip.COLORS[color%2], color)
-        if (color+1)%16 == 0 or (color+1)%160 == 0:
-            strip.pixels_show()
-            time.sleep(0.05)
+        show_led_line_by_line(color)
     
     
 def pattern2():
     for color in range(159,-1,-1):             
         strip.color_chase(strip.COLORS[color%3], color)
-        if color%16 ==0 or color%144 == 0:
-            print((color)%15)
-            strip.pixels_show()
-            time.sleep(0.05)
+        show_led_line_by_line(color)
     
 def pattern3():
     for color in range(159,-1,-1):             
         strip.color_chase(strip.COLORS[color%3], color)
-        if color%16 ==0 or color%144 == 0:
-            print((color)%15)
-            strip.pixels_show()
-            time.sleep(0.05)
+        show_led_line_by_line(color)
     
 def pattern4():
     color1 = 0
