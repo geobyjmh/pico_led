@@ -1,3 +1,4 @@
+#This code was taken from the waveshare online resource to support the WAV-20170 which can be found at  https://www.waveshare.com/wiki/Pico-RGB-LED
 # Example using PIO to drive a set of WS2812 LEDs.
 import array, time
 from machine import Pin
