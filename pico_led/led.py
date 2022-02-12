@@ -103,7 +103,14 @@ def pattern7():
         strip.color_chase(strip.lattice[color], color)
     strip.pixels_show()
     time.sleep(0.5)
-    
+ 
+def pattern_for_ever():
+     print("pattern_for_ever")
+     try:
+         while(1): strip.rainbow_cycle(0.002)
+     except:
+         turn_off_all_leds()
+     
     
 if __name__=='__main__':
     strip = NeoPixel()
@@ -129,11 +136,9 @@ if __name__=='__main__':
     pattern7()
     turn_off_all_leds()
     
+    pattern_for_ever()
     
-    print("rainbow")
-    #todo refactor tis secition when done above
-    #while(1):
-    #    strip.rainbow_cycle(0.002)    
+        
 
 
 
