@@ -19,31 +19,32 @@ def show_led_line_by_line(pixel_position):
             time.sleep(0.05)
        
 def pattern1():
-    print("chases")
-
+    print('pattern1')
     for color in range(0,160): #从下往上显示            
         strip.color_chase(strip.COLORS[color%2], color)
         show_led_line_by_line(color)
     
     
 def pattern2():
+    print('pattern2')
     for color in range(159,-1,-1):             
         strip.color_chase(strip.COLORS[color%3], color)
         show_led_line_by_line(color)
     
 def pattern3():
+    print('pattern3')
     for color in range(159,-1,-1):             
         strip.color_chase(strip.COLORS[color%3], color)
         show_led_line_by_line(color)
     
 def pattern4():
+    print('pattern4')
     color1 = 0
     color2 = 15
     num1 = 0
     num2 = 1
     num3 = 15
     for color in range(0,160):
-        print("color1:",color1)
         strip.color_chase(strip.COLORS[color%4], color1)
         color1 += 16
         if color1 > 159:
@@ -59,6 +60,7 @@ def pattern4():
             time.sleep(0.05)
     
 def pattern5():
+    print('pattern5')
     color1 = 0
     color2 = 15
     num1 = 0
@@ -72,12 +74,12 @@ def pattern5():
             if num3 < 0:
                 num3=15
             color2 = num3
-        print("num3:",num3)
         if  color2-1 == num3-1:
             strip.pixels_show()
             time.sleep(0.05)
         
 def pattern6():
+    print('pattern6')
     color1 = 0
     num1 = 0
     num2 = 1       
@@ -96,6 +98,7 @@ def pattern6():
             strip.pixels_show()
             
 def pattern7():
+    print('pattern7')
     for color in range(0,160):
         strip.color_chase(strip.lattice[color], color)
     strip.pixels_show()
