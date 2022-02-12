@@ -3,6 +3,11 @@ import array, time
 import ws2812_pio_driver
 from NeoPixel import NeoPixel       
 
+def turn_off_all_leds():
+    strip.pixels_fill(strip.BLACK)
+    strip.pixels_show()
+    time.sleep(0.05)
+    
 def pattern1():
     print("chases")
 
@@ -11,9 +16,7 @@ def pattern1():
         if (color+1)%16 == 0 or (color+1)%160 == 0:
             strip.pixels_show()
             time.sleep(0.05)
-    strip.pixels_fill(strip.BLACK)
-    strip.pixels_show()
-    time.sleep(0.05)
+    
     
 def pattern2():
     for color in range(159,-1,-1):             
@@ -22,9 +25,6 @@ def pattern2():
             print((color)%15)
             strip.pixels_show()
             time.sleep(0.05)
-    strip.pixels_fill(strip.BLACK)
-    strip.pixels_show()
-    time.sleep(0.05)
     
 def pattern3():
     for color in range(159,-1,-1):             
@@ -33,9 +33,6 @@ def pattern3():
             print((color)%15)
             strip.pixels_show()
             time.sleep(0.05)
-    strip.pixels_fill(strip.BLACK)
-    strip.pixels_show()
-    time.sleep(0.05)
     
 def pattern4():
     color1 = 0
@@ -58,9 +55,6 @@ def pattern4():
                 num2=2
             strip.pixels_show()
             time.sleep(0.05)
-    strip.pixels_fill(strip.BLACK)
-    strip.pixels_show()
-    time.sleep(0.05)
     
 def pattern5():
     color1 = 0
@@ -81,10 +75,6 @@ def pattern5():
             strip.pixels_show()
             time.sleep(0.05)
         
-    strip.pixels_fill(strip.BLACK)
-    strip.pixels_show()
-    time.sleep(0.05)
-    
 def pattern6():
     color1 = 0
     num1 = 0
@@ -114,16 +104,31 @@ if __name__=='__main__':
     strip = NeoPixel()
 
     pattern1()
+    turn_off_all_leds()
+    
     pattern2()
+    turn_off_all_leds()
+    
     pattern3()
+    turn_off_all_leds()
+    
     pattern4()
+    turn_off_all_leds()
+    
     pattern5()
+    turn_off_all_leds()
+    
     pattern6()
+    turn_off_all_leds()
+    
     pattern7()
+    turn_off_all_leds()
+    
     
     print("rainbow")
-    while(1):
-        strip.rainbow_cycle(0.002)    
+    #todo refactor tis secition when done above
+    #while(1):
+    #    strip.rainbow_cycle(0.002)    
 
 
 
