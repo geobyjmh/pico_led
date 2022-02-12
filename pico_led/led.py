@@ -20,7 +20,7 @@ def show_led_line_by_line(pixel_position):
        
 def pattern1():
     print('pattern1')
-    for color in range(0,160): #从下往上显示            
+    for color in range(0,160):            
         strip.color_chase(strip.COLORS[color%2], color)
         show_led_line_by_line(color)
     
@@ -40,10 +40,8 @@ def pattern3():
 def pattern4():
     print('pattern4')
     color1 = 0
-    color2 = 15
     num1 = 0
     num2 = 1
-    num3 = 15
     for color in range(0,160):
         strip.color_chase(strip.COLORS[color%4], color1)
         color1 += 16
@@ -61,10 +59,7 @@ def pattern4():
     
 def pattern5():
     print('pattern5')
-    color1 = 0
     color2 = 15
-    num1 = 0
-    num2 = 1
     num3 = 15
     for color in range(0,160):
         strip.color_chase(strip.COLORS[color%5], color2)
