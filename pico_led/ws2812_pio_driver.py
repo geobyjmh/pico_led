@@ -1,4 +1,11 @@
 #https://github.com/geobyjmh/pico_led
+
+#I found the code in this file a little confusing to start with, that was until I realised the code was not running on the
+#Raspberry Pi Pico itself but a dedicated hardware peripheral for controlling the I/O.
+#The links below will help you understand this I/O peripheral:
+#https://www.seeedstudio.com/blog/2021/01/25/programmable-io-with-raspberry-pi-pico/
+#https://youtu.be/yYnQYF_Xa8g
+
 from machine import Pin
 import rp2
 
