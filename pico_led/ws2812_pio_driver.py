@@ -1,5 +1,4 @@
 #https://github.com/geobyjmh/pico_led
-#import array, time
 from machine import Pin
 import rp2
 
