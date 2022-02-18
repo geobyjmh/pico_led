@@ -96,7 +96,7 @@ def pattern6():
 def pattern7():
     print('pattern7')
     for color in range(0,160):
-        strip.color_chase(colour.LATTICE[color], color)
+        strip.color_chase(colour.PATTERN_121[color], color)
     strip.pixels_show()
     time.sleep(0.5)
  
