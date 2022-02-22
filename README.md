@@ -7,5 +7,5 @@ The official online resource for the WAV-20170 can be found at [Pico RGB LED](ht
 This is my refactored code, it keeps the same LED patterns as the original, however the output debug print statements that were used in the original have been removed. The entry point for the code is in led.py
 
 [YouTube video of this code in action](https://youtu.be/JlqCx8ctprE)
-# bounce
+# Bounce
 A work in progress!
