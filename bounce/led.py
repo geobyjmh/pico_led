@@ -3,7 +3,8 @@ import array, time
 import ws2812_pio_driver
 import colour
 import random
-from NeoPixel import NeoPixel       
+from NeoPixel import NeoPixel
+from position import position
 
 LED_ROW_COUNT = 16
 LED_COL_COUNT = 10
@@ -17,34 +18,14 @@ def turn_off_all_leds():
   
 def pattern1():
     print('pattern1')
-    #for y in range(LED_COL_COUNT):
-    turn_off_all_leds()
-    #for x in range(LED_ROW_COUNT):
-    x = random.randrange(0,LED_ROW_COUNT-1)
-    xjump = 1
-    
-    y = random.randrange(0,LED_COL_COUNT-1)
-    yjump = 1
-    
+    x = position(0, LED_ROW_COUNT-1)
+    y = position(0, LED_COL_COUNT-1)
+  
     while(1):
-        strip.pixel_set_xy(colour.WHITE, x, y)
+        strip.pixel_set_xy(colour.WHITE, x.get_value(), y.get_value())
         strip.pixels_show()
         time.sleep(0.1)
-        turn_off_all_leds()
-        x += xjump
-        if x == LED_ROW_COUNT - 1:
-           xjump = -1
-        if x == 0:
-            xjump = 1
-            
-        y += yjump
-        if y == LED_COL_COUNT - 1:
-           yjump = -1
-        if y == 0:
-            yjump = 1
-        
-    
-    
+        turn_off_all_leds()    
 
 if __name__=='__main__':
     strip = NeoPixel()
