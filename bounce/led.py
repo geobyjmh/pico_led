@@ -35,7 +35,7 @@ def pattern1():
     while(1):
         pixels = add_pixel_to_list(pixels, x, y)
         for p in pixels:
-            strip.pixel_set_xy(colour.WHITE, p[0], p[1])
+            strip.pixel_set_xy(colour.get_random_colour(), p[0], p[1])
         strip.pixels_show()
         time.sleep(0.1)
         turn_off_all_leds()    
