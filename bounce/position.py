@@ -1,3 +1,6 @@
+#https://github.com/geobyjmh/pico_led
+import random
+
 STEP = 1
 UP_DIRECTION = 1
 DOWN_DIRECTION = -1
@@ -13,11 +16,11 @@ class position:
         self.__value += self.__direction * STEP
         
         if self.__value >= self.__max_value:
-            self.__value = self.__max_value
+            self.__value = self.__max_value - 1
             self.__direction = DOWN_DIRECTION
             
         if self.__value <= self.__min_value:
-            self.__value = self.__min_value
+            self.__value = self.__min_value + 1
             self.__direction = UP_DIRECTION
             
         return self.__value
