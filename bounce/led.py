@@ -58,7 +58,6 @@ def init_globals():
 def main():
     init_globals()
     pixel_pattern()
-    turn_off_all_leds()
     
 def main_with_exceptions():
     try:
