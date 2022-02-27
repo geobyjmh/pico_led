@@ -12,6 +12,7 @@ TOTAL_LED_COUNT = LED_ROW_COUNT * LED_COL_COUNT
 LED_COUNT = 5
 
 def turn_off_all_leds():
+    global strip
     strip.pixels_fill(colour.BLACK)
     strip.pixels_show()
     time.sleep(0.05)
@@ -27,23 +28,49 @@ def add_pixel_to_list(pixels, x, y):
         pixels.pop(0) 
     return pixels
 
-def pattern1():
-    print('pattern1')
+def pixel_set(pixels):
+    global strip
+    for p in pixels:
+        strip.pixel_set_xy(colour.get_random_colour(), p[0], p[1])
+    
+    
+def pixel_loop(x, y, pixels):
+    global strip
+    pixels = add_pixel_to_list(pixels, x, y)
+    pixel_set(pixels)
+    strip.pixels_show()
+    time.sleep(0.1)
+    turn_off_all_leds()
+    
+
+def pixel_pattern():
     x,y = init_position()
     pixels = list()
 
     while(1):
-        pixels = add_pixel_to_list(pixels, x, y)
-        for p in pixels:
-            strip.pixel_set_xy(colour.get_random_colour(), p[0], p[1])
-        strip.pixels_show()
-        time.sleep(0.1)
-        turn_off_all_leds()    
+        pixel_loop(x, y, pixels)
+        
 
-if __name__=='__main__':
+def init_globals():
+    global strip
     strip = NeoPixel()
-    pattern1()
+
+def main():
+    init_globals()
+    pixel_pattern()
     turn_off_all_leds()
+    
+def main_with_exceptions():
+    try:
+        main()
+    except:
+        turn_off_all_leds()
+    
+if __name__=='__main__':
+    main_with_exceptions()
+    
+     
+   
     
 
     
