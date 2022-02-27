@@ -9,4 +9,7 @@ This is my refactored code, it keeps the same LED patterns as the original, howe
 [YouTube video of this code in action](https://youtu.be/JlqCx8ctprE)
 # Bounce
 ![bounce01.jpg](https://github.com/geobyjmh/pico_led/blob/main/images/bounce01.jpg)
+
 A work in progress!
+
+[YouTube video of this code 'bounce' in action](https://youtu.be/_B2BzsI45_o)
