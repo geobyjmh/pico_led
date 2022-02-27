@@ -8,5 +8,5 @@ This is my refactored code, it keeps the same LED patterns as the original, howe
 
 [YouTube video of this code in action](https://youtu.be/JlqCx8ctprE)
 # Bounce
-![bounce01.jpg](<img src="./images/bounce01.jpg" width="30">)
+![bounce01.jpg](<img src="./images/bounce01.jpg" width="30" />)
 A work in progress!
