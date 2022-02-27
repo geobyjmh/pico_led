@@ -1,5 +1,4 @@
 #https://github.com/geobyjmh/pico_led
-import random
 
 STEP = 1
 UP_DIRECTION = 1
