@@ -10,6 +10,6 @@ This is my refactored code, it keeps the same LED patterns as the original, howe
 # Bounce
 ![bounce01.jpg](https://github.com/geobyjmh/pico_led/blob/main/images/bounce01.jpg)
 
-A work in progress!
+The bounce example takes the pico_led code and implements a function to light a single LED given an x, y position. It then uses this function to create a moving pattern.
 
 [YouTube video of this code 'bounce' in action](https://youtu.be/_B2BzsI45_o)
